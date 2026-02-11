@@ -10,10 +10,10 @@
 #define Q_DECL_IMPORT __attribute__((visibility("default")))
 #endif
 
-#if defined(LIB_LIBRARY)
-#define LIB_EXPORT Q_DECL_EXPORT
+#if defined(FINVOICE3_LIBRARY)
+#define FINVOICE3_EXPORT Q_DECL_EXPORT
 #else
-#define LIB_EXPORT Q_DECL_IMPORT
+#define FINVOICE3_EXPORT Q_DECL_IMPORT
 #endif
 
 #endif // LIB_GLOBAL_H

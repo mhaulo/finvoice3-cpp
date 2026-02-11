@@ -3,7 +3,7 @@
 
 #include "lib_global.h"
 
-class LIB_EXPORT Finvoice3
+class FINVOICE3_EXPORT Finvoice3
 {
 public:
     Finvoice3();
