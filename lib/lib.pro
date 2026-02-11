@@ -22,3 +22,6 @@ unix {
     target.path = /usr/lib
 }
 !isEmpty(target.path): INSTALLS += target
+
+unix: CONFIG += link_pkgconfig
+unix: PKGCONFIG += libxml++-2.6
