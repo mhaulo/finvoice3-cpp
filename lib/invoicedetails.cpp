@@ -1,0 +1,87 @@
+#include "invoicedetails.h"
+
+#include "simpletag.h"
+#include "invoicetypecodefi.h"
+#include "invoiceclassification.h"
+#include "origincode.h"
+#include "invoicedobjectid.h"
+#include "originalinvoicereference.h"
+#include "partyidentifier.h"
+#include "definitiondetails.h"
+#include "vatpoint.h"
+#include "vatspecificationdetails.h"
+#include "paymenttermsdetails.h"
+#include "discountdetails.h"
+#include "invoicechargedetails.h"
+
+InvoiceDetails::InvoiceDetails() : ComplexTag("InvoiceDetails")
+{
+    addSubtag(new InvoiceTypeCodeFi);
+    addSubtag(new InvoiceClassification);
+    addSubtag(new OriginCode);
+    addSubtag(new InvoicedObjectId);
+    addSubtag(new OriginalInvoiceReference);
+    addSubtag(new PartyIdentifier("BuyersSellerIdentifier"));
+    addSubtag(new PartyIdentifier("SellersBuyerIdentifier"));
+    addSubtag(new DefinitionDetails);
+    addSubtag(new VatPoint);
+    addSubtag(new VatSpecificationDetails);
+    addSubtag(new PaymentTermsDetails);
+    addSubtag(new DiscountDetails);
+    addSubtag(new InvoiceChargeDetails);
+    addSubtag(new SimpleTag("InvoiceTypeCodeUN"));
+    addSubtag(new SimpleTag("InvoiceTypeText"));
+    addSubtag(new SimpleTag("OriginText"));
+    addSubtag(new SimpleTag("InvoiceNumber"));
+    addSubtag(new SimpleTag("InvoiceDate"));
+    addSubtag(new SimpleTag("OriginalInvoiceNumber"));
+    addSubtag(new SimpleTag("OriginalInvoiceDate"));
+    addSubtag(new SimpleTag("InvoicingPeriodStartDate"));
+    addSubtag(new SimpleTag("InvoicingPeriodEndDate"));
+    addSubtag(new SimpleTag("SellerReferenceIdentifier"));
+    addSubtag(new SimpleTag("SellerReferenceIdentifierUrlText"));
+    addSubtag(new SimpleTag("BuyersSellerIdentifier"));
+    addSubtag(new SimpleTag("SellersBuyerIdentifier"));
+    addSubtag(new SimpleTag("OrderIdentifier"));
+    addSubtag(new SimpleTag("OrderIdentifierUrlText"));
+    addSubtag(new SimpleTag("OrderDate"));
+    addSubtag(new SimpleTag("OrdererName"));
+    addSubtag(new SimpleTag("SalesPersonName"));
+    addSubtag(new SimpleTag("OrderConfirmationIdentifier"));
+    addSubtag(new SimpleTag("OrderConfirmationDate"));
+    addSubtag(new SimpleTag("AgreementIdentifier"));
+    addSubtag(new SimpleTag("AgreementIdentifierUrlText"));
+    addSubtag(new SimpleTag("AgreementTypeText"));
+    addSubtag(new SimpleTag("AgreementTypeCode"));
+    addSubtag(new SimpleTag("AgreementDate"));
+    addSubtag(new SimpleTag("NotificationIdentifier"));
+    addSubtag(new SimpleTag("NotificationDate"));
+    addSubtag(new SimpleTag("RegistrationNumberIdentifier"));
+    addSubtag(new SimpleTag("ControllerIdentifier"));
+    addSubtag(new SimpleTag("ControllerName"));
+    addSubtag(new SimpleTag("ControlDate"));
+    addSubtag(new SimpleTag("BuyerReferenceIdentifier"));
+    addSubtag(new SimpleTag("ProjectReferenceIdentifier"));
+    addSubtag(new SimpleTag("RowsTotalVatExcludedAmount"));
+    addSubtag(new SimpleTag("DiscountsTotalVatExcludedAmount"));
+    addSubtag(new SimpleTag("ChargesTotalVatExcludedAmount"));
+    addSubtag(new SimpleTag("InvoiceTotalVatExcludedAmount"));
+    addSubtag(new SimpleTag("InvoiceTotalVatAmount"));
+    addSubtag(new SimpleTag("InvoiceTotalVatAccountingAmount"));
+    addSubtag(new SimpleTag("InvoiceTotalVatIncludedAmount"));
+    addSubtag(new SimpleTag("InvoiceTotalRoundoffAmount"));
+    addSubtag(new SimpleTag("ExchangeRate"));
+    addSubtag(new SimpleTag("OtherCurrencyAmountVatExcludedAmount"));
+    addSubtag(new SimpleTag("OtherCurrencyAmountVatIncludedAmount"));
+    addSubtag(new SimpleTag("CreditLimitAmount"));
+    addSubtag(new SimpleTag("CreditInterestPercent"));
+    addSubtag(new SimpleTag("OperationLimitAmount"));
+    addSubtag(new SimpleTag("MonthlyAmount"));
+    addSubtag(new SimpleTag("ShortProposedAccountIdentifier"));
+    addSubtag(new SimpleTag("NormalProposedAccountIdentifier"));
+    addSubtag(new SimpleTag("ProposedAccountText"));
+    addSubtag(new SimpleTag("AccountDimensionText"));
+    addSubtag(new SimpleTag("InvoiceFreeText"));
+    addSubtag(new SimpleTag("InvoiceVatFreeText"));
+    addSubtag(new SimpleTag("TenderReference"));
+}

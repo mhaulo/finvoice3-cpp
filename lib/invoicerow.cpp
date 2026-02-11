@@ -1,0 +1,98 @@
+#include "invoicerow.h"
+
+#include "simpletag.h"
+#include "invoicedobjectid.h"
+#include "articlegroupidentifier.h"
+#include "eancode.h"
+#include "rowdefinitiondetails.h"
+#include "originalinvoicereference.h"
+#include "rowoverduepaymentdetails.h"
+#include "rowanypartydetails.h"
+#include "rowdeliverydetails.h"
+#include "rowprogressivediscountdetails.h"
+#include "rowchargedetails.h"
+#include "transactiondetails.h"
+#include "subinvoicerow.h"
+
+InvoiceRow::InvoiceRow() : ComplexTag("InvoiceRow")
+{
+    addSubtag(new InvoicedObjectId);
+    addSubtag(new ArticleGroupIdentifier);
+    addSubtag(new EanCode);
+    addSubtag(new RowDefinitionDetails);
+    addSubtag(new OriginalInvoiceReference);
+    addSubtag(new RowOverDuePaymentDetails);
+    addSubtag(new RowAnyPartyDetails);
+    addSubtag(new RowDeliveryDetails);
+    addSubtag(new RowProgressiveDiscountDetails);
+    addSubtag(new RowChargeDetails);
+    addSubtag(new TransactionDetails);
+    addSubtag(new SubInvoiceRow);
+    addSubtag(new SimpleTag("RowSubIdentifier"));
+    addSubtag(new SimpleTag("ArticleIdentifier"));
+    addSubtag(new SimpleTag("ArticleName"));
+    addSubtag(new SimpleTag("ArticleDescription"));
+    addSubtag(new SimpleTag("ArticleInfoUrlText"));
+    addSubtag(new SimpleTag("BuyerArticleIdentifier"));
+    addSubtag(new SimpleTag("RowRegistrationNumberIdentifier"));
+    addSubtag(new SimpleTag("SerialNumberIdentifier"));
+    addSubtag(new SimpleTag("RowActionCode"));
+    addSubtag(new SimpleTag("OfferedQuantity"));
+    addSubtag(new SimpleTag("DeliveredQuantity"));
+    addSubtag(new SimpleTag("OrderedQuantity"));
+    addSubtag(new SimpleTag("ConfirmedQuantity"));
+    addSubtag(new SimpleTag("PostDeliveredQuantity"));
+    addSubtag(new SimpleTag("InvoicedQuantity"));
+    addSubtag(new SimpleTag("CreditRequestedQuantity"));
+    addSubtag(new SimpleTag("ReturnedQuantity"));
+    addSubtag(new SimpleTag("StartDate"));
+    addSubtag(new SimpleTag("UnitPriceAmount"));
+    addSubtag(new SimpleTag("UnitPriceDiscountAmount"));
+    addSubtag(new SimpleTag("UnitPriceNetAmount"));
+    addSubtag(new SimpleTag("UnitPriceVatIncludedAmount"));
+    addSubtag(new SimpleTag("UnitPriceBaseQuantity"));
+    addSubtag(new SimpleTag("RowIdentifier"));
+    addSubtag(new SimpleTag("RowIdentifierUrlText"));
+    addSubtag(new SimpleTag("RowOrderPositionIdentifier"));
+    addSubtag(new SimpleTag("RowIdentifierDate"));
+    addSubtag(new SimpleTag("RowPositionIdentifier"));
+    addSubtag(new SimpleTag("OriginalInvoiceNumber"));
+    addSubtag(new SimpleTag("OriginalInvoiceDate"));
+    addSubtag(new SimpleTag("RowOrdererName"));
+    addSubtag(new SimpleTag("RowSalesPersonName"));
+    addSubtag(new SimpleTag("RowOrderConfirmationIdentifier"));
+    addSubtag(new SimpleTag("RowOrderConfirmationDate"));
+    addSubtag(new SimpleTag("RowDeliveryIdentifier"));
+    addSubtag(new SimpleTag("RowDeliveryIdentifierUrlText"));
+    addSubtag(new SimpleTag("RowDeliveryDate"));
+    addSubtag(new SimpleTag("RowQuotationIdentifier"));
+    addSubtag(new SimpleTag("RowQuotationIdentifierUrlText"));
+    addSubtag(new SimpleTag("RowAgreementIdentifier"));
+    addSubtag(new SimpleTag("RowAgreementIdentifierUrlText"));
+    addSubtag(new SimpleTag("RowRequestOfQuotationIdentifier"));
+    addSubtag(new SimpleTag("RowRequestOfQuotationIdentifierUrlText"));
+    addSubtag(new SimpleTag("RowPriceListIdentifier"));
+    addSubtag(new SimpleTag("RowPriceListIdentifierUrlText"));
+    addSubtag(new SimpleTag("RowProjectReferenceIdentifier"));
+    addSubtag(new SimpleTag("RowShortProposedAccountIdentifier"));
+    addSubtag(new SimpleTag("RowNormalProposedAccountIdentifier"));
+    addSubtag(new SimpleTag("RowProposedAccountText"));
+    addSubtag(new SimpleTag("RowAccountDimensionText"));
+    addSubtag(new SimpleTag("RowSellerAccountText"));
+    addSubtag(new SimpleTag("RowFreeText"));
+    addSubtag(new SimpleTag("RowUsedQuantity"));
+    addSubtag(new SimpleTag("RowPreviousMeterReadingDate"));
+    addSubtag(new SimpleTag("RowLatestMeterReadingDate"));
+    addSubtag(new SimpleTag("RowCalculatedQuantity"));
+    addSubtag(new SimpleTag("RowAveragePriceAmount"));
+    addSubtag(new SimpleTag("RowDiscountPercent"));
+    addSubtag(new SimpleTag("RowDiscountAmount"));
+    addSubtag(new SimpleTag("RowDiscountBaseAmount"));
+    addSubtag(new SimpleTag("RowDiscountTypeCode"));
+    addSubtag(new SimpleTag("RowDiscountTypeText"));
+    addSubtag(new SimpleTag("RowVatRatePercent"));
+    addSubtag(new SimpleTag("RowVatCode"));
+    addSubtag(new SimpleTag("RowVatAmount"));
+    addSubtag(new SimpleTag("RowVatExcludedAmount"));
+    addSubtag(new SimpleTag("RowAmount"));
+}

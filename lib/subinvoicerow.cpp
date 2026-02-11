@@ -1,0 +1,98 @@
+#include "subinvoicerow.h"
+
+#include "simpletag.h"
+#include "invoicedobjectid.h"
+#include "articlegroupidentifier.h"
+#include "eancode.h"
+#include "subrowdefinitiondetails.h"
+#include "originalinvoicereference.h"
+#include "subrowoverduepaymentdetails.h"
+#include "subrowanypartydetails.h"
+#include "subrowdeliverydetails.h"
+#include "subrowprogressivediscountdetails.h"
+#include "rowchargedetails.h"
+#include "transactiondetails.h"
+
+SubInvoiceRow::SubInvoiceRow() : ComplexTag("SubInvoiceRow")
+{
+    addSubtag(new InvoicedObjectId("SubInvoicedObjectID"));
+    addSubtag(new ArticleGroupIdentifier("SubArticleGroupIdentifier"));
+    addSubtag(new EanCode("SubEanCode"));
+    addSubtag(new SubRowDefinitionDetails);
+    addSubtag(new OriginalInvoiceReference("SubOriginalInvoiceReference"));
+    addSubtag(new SubRowOverDuePaymentDetails);
+    addSubtag(new SubRowAnyPartyDetails);
+    addSubtag(new SubRowDeliveryDetails);
+    addSubtag(new SubRowProgressiveDiscountDetails);
+    addSubtag(new RowChargeDetails("SubRowChargeDetails"));
+    addSubtag(new TransactionDetails("SubRowTransactionDetails"));
+    addSubtag(new SimpleTag("SubIdentifier"));
+    addSubtag(new SimpleTag("SubRowPositionIdentifier"));
+    addSubtag(new SimpleTag("SubInvoicedObjectID"));
+    addSubtag(new SimpleTag("SubArticleIdentifier"));
+    addSubtag(new SimpleTag("SubArticleName"));
+    addSubtag(new SimpleTag("SubArticleDescription"));
+    addSubtag(new SimpleTag("SubArticleInfoUrlText"));
+    addSubtag(new SimpleTag("SubBuyerArticleIdentifier"));
+    addSubtag(new SimpleTag("SubRowRegistrationNumberIdentifier"));
+    addSubtag(new SimpleTag("SubSerialNumberIdentifier"));
+    addSubtag(new SimpleTag("SubRowActionCode"));
+    addSubtag(new SimpleTag("SubOfferedQuantity"));
+    addSubtag(new SimpleTag("SubDeliveredQuantity"));
+    addSubtag(new SimpleTag("SubOrderedQuantity"));
+    addSubtag(new SimpleTag("SubConfirmedQuantity"));
+    addSubtag(new SimpleTag("SubPostDeliveredQuantity"));
+    addSubtag(new SimpleTag("SubInvoicedQuantity"));
+    addSubtag(new SimpleTag("SubCreditRequestedQuantity"));
+    addSubtag(new SimpleTag("SubReturnedQuantity"));
+    addSubtag(new SimpleTag("SubStartDate"));
+    addSubtag(new SimpleTag("SubEndDate"));
+    addSubtag(new SimpleTag("SubUnitPriceAmount"));
+    addSubtag(new SimpleTag("SubUnitProceDiscountAmount"));
+    addSubtag(new SimpleTag("SubUnitPriceNetAmount"));
+    addSubtag(new SimpleTag("SubUnitPriceVatIncludedAmount"));
+    addSubtag(new SimpleTag("SubUnitPriceBaseQuantity"));
+    addSubtag(new SimpleTag("SubRowIdentifier"));
+    addSubtag(new SimpleTag("SubRowIdentifierUrlText"));
+    addSubtag(new SimpleTag("SubRowIdentifierDate"));
+    addSubtag(new SimpleTag("SubRowOrdererName"));
+    addSubtag(new SimpleTag("SubRowSalesPersonName"));
+    addSubtag(new SimpleTag("SubRowOrderConfirmationIdentifier"));
+    addSubtag(new SimpleTag("SubRowOrderConfirmationDate"));
+    addSubtag(new SimpleTag("SubOriginalInvoiceNumber"));
+    addSubtag(new SimpleTag("SubOriginalInvoiceDate"));
+    addSubtag(new SimpleTag("SubRowDeliveryIdentifer"));
+    addSubtag(new SimpleTag("SubRowDeliveryIdentifierUrlText"));
+    addSubtag(new SimpleTag("SubRowDeliveryDate"));
+    addSubtag(new SimpleTag("SubRowQuotationIdentifier"));
+    addSubtag(new SimpleTag("SubRowQuotationIdentifierUrlText"));
+    addSubtag(new SimpleTag("SubRowAgreementIdentifier"));
+    addSubtag(new SimpleTag("SubRowAgreementIdentifierUrlText"));
+    addSubtag(new SimpleTag("SubRowRequestOfQuotationIdentifier"));
+    addSubtag(new SimpleTag("SubRowRequestOfQuotationIdentifierUrlText"));
+    addSubtag(new SimpleTag("SubRowPriceListIdentifier"));
+    addSubtag(new SimpleTag("SubRowPriceListIdentifierUrlText"));
+    addSubtag(new SimpleTag("SubRowBuyerReferenceIdentifer"));
+    addSubtag(new SimpleTag("SubRowProjectReferenceIdentifier"));
+    addSubtag(new SimpleTag("SubRowShortProposedAccountIdentifier"));
+    addSubtag(new SimpleTag("SubRowNormalProposedAccountIdentifier"));
+    addSubtag(new SimpleTag("SubRowProposedAccountText"));
+    addSubtag(new SimpleTag("SubRowAccountDimensionText"));
+    addSubtag(new SimpleTag("SubRowSellerAccountText"));
+    addSubtag(new SimpleTag("SubRowFreeText"));
+    addSubtag(new SimpleTag("SubRowUsedQuantity"));
+    addSubtag(new SimpleTag("SubRowPreviousMeterReadingDate"));
+    addSubtag(new SimpleTag("SubRowLatestMeterReadingText"));
+    addSubtag(new SimpleTag("SubRowCalculatedQuantity"));
+    addSubtag(new SimpleTag("SubRowAveragePriceAmount"));
+    addSubtag(new SimpleTag("SubRowDiscountPercent"));
+    addSubtag(new SimpleTag("SubRowDisSubRowAmountcountAmount"));
+    addSubtag(new SimpleTag("SubRowDiscountBaseAmount"));
+    addSubtag(new SimpleTag("SubRowDiscountTypeCode"));
+    addSubtag(new SimpleTag("SubRowDiscountTypeText"));
+    addSubtag(new SimpleTag("SubRowVatRatePercent"));
+    addSubtag(new SimpleTag("SubRowVatCode"));
+    addSubtag(new SimpleTag("SubRowVatAmount"));
+    addSubtag(new SimpleTag("SubRowVatExcludedAmount"));
+    addSubtag(new SimpleTag("SubRowAmount"));
+}
