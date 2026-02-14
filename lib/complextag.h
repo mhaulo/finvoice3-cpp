@@ -11,9 +11,15 @@ public:
     virtual ~ComplexTag();
 
     void addSubtag(Tag* tag);
+    Tag* findSubtag(const std::string name, bool recursive = false) const override;
+    std::vector<Tag*> getSubtags() override;
 
-    bool isBlank() const;
-    xmlpp::Element* toXml(xmlpp::Element* parent) const;
+    void setValue(std::string value) override;
+
+    bool isBlank() const override;
+    xmlpp::Element* toXml(xmlpp::Element* parent) const override;
+    void compact() override;
+    void build(xmlpp::Element *element) override;
 
 protected:
     std::vector<Tag*> subtags;

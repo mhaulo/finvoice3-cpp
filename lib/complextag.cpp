@@ -1,4 +1,5 @@
 #include "complextag.h"
+#include <algorithm>
 
 ComplexTag::ComplexTag() : Tag()
 {
@@ -55,4 +56,65 @@ xmlpp::Element* ComplexTag::toXml(xmlpp::Element* parent) const
     }
 
     return element;
+}
+
+Tag* ComplexTag::findSubtag(const std::string name, bool recursive) const
+{
+    auto it = find_if(subtags.begin(), subtags.end(), [name](Tag* tag){ return tag->getName() == name; });
+    Tag *tag = nullptr;
+
+    if (it != subtags.end()) {
+        tag = *it;
+    }
+
+    if (!tag && recursive) {
+        for (Tag *subtag : subtags) {
+            tag = subtag->findSubtag(name, true);
+
+            if (tag) {
+                break;
+            }
+        }
+    }
+
+    return tag;
+}
+
+void ComplexTag::compact()
+{
+    Tag::compact();
+
+    for (auto it = subtags.begin(); it != subtags.end();) {
+        Tag *tag = *it;
+        tag->compact();
+
+        if (tag->isBlank()) {
+            subtags.erase(it);
+            delete tag;
+            tag = nullptr;
+        }
+        else {
+            it++;
+        }
+    }
+}
+
+void ComplexTag::build(xmlpp::Element *element)
+{
+    Tag::build(element);
+
+    for (Tag *tag : subtags) {
+        xmlpp::Element *child = element->add_child(tag->getName());
+        tag->build(child);
+    }
+}
+
+void ComplexTag::setValue(std::string value)
+{
+    // Do nothing
+}
+
+std::vector<Tag*> ComplexTag::getSubtags()
+{
+    return subtags;
 }

@@ -40,3 +40,32 @@ void Tag::setAttribute(std::string key, std::string value)
 {
     attributes[key] = value;
 }
+
+void Tag::removeAttribute(std::string key)
+{
+    attributes.erase(key);
+}
+
+bool Tag::hasSubtag(const std::string name) const
+{
+    return findSubtag(name) != nullptr;
+}
+
+void Tag::compact()
+{
+    for (auto it = attributes.begin(); it != attributes.end();) {
+        if (it->second.empty()) {
+            it = attributes.erase(it);
+        }
+        else {
+            it++;
+        }
+    }
+}
+
+void Tag::build(xmlpp::Element *element)
+{
+    for (auto attribute : attributes) {
+        element->set_attribute(attribute.first, attribute.second);
+    }
+}

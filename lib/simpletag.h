@@ -12,10 +12,13 @@ public:
     SimpleTag(std::string name);
 
     std::string getValue() const;
-    virtual bool isBlank() const;
-    xmlpp::Element* toXml(xmlpp::Element* parent) const;
+    virtual bool isBlank() const override;
+    xmlpp::Element* toXml(xmlpp::Element* parent) const override;
+    Tag* findSubtag(const std::string name, bool recursive = false) const override;
+    std::vector<Tag*> getSubtags() override;
 
-    void setValue(std::string value);
+    void setValue(std::string value) override;
+    void build(xmlpp::Element *element) override;
 
 protected:
     std::string value;

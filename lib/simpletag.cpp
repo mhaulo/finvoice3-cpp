@@ -17,7 +17,16 @@ std::string SimpleTag::getValue() const
 
 bool SimpleTag::isBlank() const
 {
-    return value.empty() && attributes.empty(); // TODO blank atrribute mean it's empty
+    bool blank = value.empty();
+
+    for (auto attribute : attributes) {
+        if (!attribute.second.empty()) {
+            blank = false;
+            break;
+        }
+    }
+
+    return blank;
 }
 
 xmlpp::Element* SimpleTag::toXml(xmlpp::Element* parent) const
@@ -36,4 +45,20 @@ xmlpp::Element* SimpleTag::toXml(xmlpp::Element* parent) const
 void SimpleTag::setValue(std::string newValue)
 {
     value = newValue;
+}
+
+Tag* SimpleTag::findSubtag(const std::string name, bool recursive) const
+{
+    return nullptr;
+}
+
+void SimpleTag::build(xmlpp::Element *element)
+{
+    Tag::build(element);
+    element->add_child_text(value);
+}
+
+std::vector<Tag*> SimpleTag::getSubtags()
+{
+    return std::vector<Tag*>();
 }

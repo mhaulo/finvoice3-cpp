@@ -19,9 +19,19 @@ public:
     std::string getAttribute(std::string key) const;
 
     void setAttribute(std::string key, std::string value);
+    virtual void setValue(std::string value) = 0;
+
+    void removeAttribute(std::string key);
 
     virtual bool isBlank() const = 0;
     virtual xmlpp::Element* toXml(xmlpp::Element* parent) const = 0;
+
+    virtual Tag* findSubtag(const std::string name, bool recursive = false) const = 0;
+    virtual bool hasSubtag(const std::string name) const;
+    virtual std::vector<Tag*> getSubtags() = 0;
+
+    virtual void compact();
+    virtual void build(xmlpp::Element *element);
 
 protected:
     std::string name;
