@@ -52,6 +52,7 @@ SOURCES += \
     externalspecificationdetails.cpp \
     factoringagreementdetails.cpp \
     factoringpartypostaladdressdetails.cpp \
+    finvoice.cpp \
     finvoice3.cpp \
     headervalue.cpp \
     invoice.cpp \
@@ -158,6 +159,7 @@ HEADERS += \
     externalspecificationdetails.h \
     factoringagreementdetails.h \
     factoringpartypostaladdressdetails.h \
+    finvoice.h \
     headervalue.h \
     invoice.h \
     invoicechargedetails.h \
