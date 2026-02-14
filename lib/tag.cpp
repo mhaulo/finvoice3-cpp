@@ -38,5 +38,5 @@ std::string Tag::getAttribute(std::string key) const
 
 void Tag::setAttribute(std::string key, std::string value)
 {
-    attributes.insert({key, value});
+    attributes[key] = value;
 }
