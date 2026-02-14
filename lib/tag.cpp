@@ -16,6 +16,11 @@ Tag::~Tag()
 
 }
 
+bool Tag::operator==(const Tag &other) const
+{
+    return name == other.name;
+}
+
 std::string Tag::getName() const
 {
     return name;

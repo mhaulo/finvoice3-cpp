@@ -12,6 +12,8 @@ public:
     Tag(std::string name);
     virtual ~Tag();
 
+    bool operator==(const Tag &other) const;
+
     std::string getName() const;
     std::map<std::string, std::string> getAttributes() const;
     std::string getAttribute(std::string key) const;
