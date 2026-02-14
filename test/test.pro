@@ -20,3 +20,6 @@ win32: LIBS += $$OUT_PWD/../lib/finvoice3.lib
 
 INCLUDEPATH += $$PWD/../lib
 DEPENDPATH += $$PWD/../lib
+
+unix: CONFIG += link_pkgconfig
+unix: PKGCONFIG += libxml++-2.6
