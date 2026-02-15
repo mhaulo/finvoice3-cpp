@@ -13,6 +13,7 @@ BuyerPartyDetails::BuyerPartyDetails() : ComplexTag("BuyerPartyDetails")
     addSubtag(new SimpleTag("BuyerOrganisationTaxCodeUrlText"));
     addSubtag(new SimpleTag("BuyerCode"));
     addSubtag(new BuyerPostalAddressDetails);
+    addSubtag(new SimpleTag("BuyerOrganisationName"));
 
-    // TODO BuyerOrganisationNames
+    // TODO more BuyerOrganisationNames
 }
