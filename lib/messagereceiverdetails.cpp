@@ -5,6 +5,6 @@
 
 MessageReceiverDetails::MessageReceiverDetails() : ComplexTag("MessageReceiverDetails")
 {
-    addSubtag(new SimpleTag("ToIntermediator"));
     addSubtag(new ElectronicAddrId("ToIdentifier", ""));
+    addSubtag(new SimpleTag("ToIntermediator"));
 }
