@@ -62,3 +62,8 @@ std::vector<Tag*> SimpleTag::getSubtags()
 {
     return std::vector<Tag*>();
 }
+
+void SimpleTag::addSubtag(Tag* tag)
+{
+    return;
+}

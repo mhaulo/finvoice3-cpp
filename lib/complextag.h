@@ -10,7 +10,7 @@ public:
     ComplexTag(std::string name);
     virtual ~ComplexTag();
 
-    void addSubtag(Tag* tag);
+    void addSubtag(Tag* tag) override;
     Tag* findSubtag(const std::string name, bool recursive = false) const override;
     std::vector<Tag*> getSubtags() override;
 

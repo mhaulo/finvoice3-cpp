@@ -16,6 +16,7 @@ public:
     xmlpp::Element* toXml(xmlpp::Element* parent) const override;
     Tag* findSubtag(const std::string name, bool recursive = false) const override;
     std::vector<Tag*> getSubtags() override;
+    void addSubtag(Tag* tag) override;
 
     void setValue(std::string value) override;
     void build(xmlpp::Element *element) override;
