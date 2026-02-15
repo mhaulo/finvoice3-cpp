@@ -3,6 +3,7 @@
 #include "simpletag.h"
 #include "sellerofficialpostaladdressdetails.h"
 #include "invoicerecipientdetails.h"
+#include "selleraccountdetails.h"
 
 SellerInformationDetails::SellerInformationDetails() : ComplexTag("SellerInformationDetails")
 {
@@ -18,5 +19,6 @@ SellerInformationDetails::SellerInformationDetails() : ComplexTag("SellerInforma
     addSubtag(new SimpleTag("SellerFreeText"));
     addSubtag(new SellerOfficialPostalAddressDetails);
     addSubtag(new InvoiceRecipientDetails);
-    // TODO SellerAccountDetails
+    addSubtag(new SellerAccountDetails);
+    // TODO more SellerAccountDetails
 }
