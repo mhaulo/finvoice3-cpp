@@ -32,6 +32,7 @@ Finvoice::Finvoice() : ComplexTag("Finvoice")
 
     addSubtag(new MessageTransmissionDetails);
     addSubtag(new SellerPartyDetails);
+    addSubtag(new SellerInformationDetails);
     addSubtag(new SellerCommunicationDetails);
     addSubtag(new InvoiceSenderPartyDetails);
     addSubtag(new InvoiceRecipientPartyDetails);
