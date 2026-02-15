@@ -27,7 +27,6 @@ InvoiceRow::InvoiceRow() : ComplexTag("InvoiceRow")
     addSubtag(new RowProgressiveDiscountDetails);
     addSubtag(new RowChargeDetails);
     addSubtag(new TransactionDetails);
-    addSubtag(new SubInvoiceRow);
     addSubtag(new SimpleTag("RowSubIdentifier"));
     addSubtag(new SimpleTag("ArticleIdentifier"));
     addSubtag(new SimpleTag("ArticleName"));
@@ -95,4 +94,6 @@ InvoiceRow::InvoiceRow() : ComplexTag("InvoiceRow")
     addSubtag(new SimpleTag("RowVatAmount"));
     addSubtag(new SimpleTag("RowVatExcludedAmount"));
     addSubtag(new SimpleTag("RowAmount"));
+
+    // addSubtag(new SubInvoiceRow);
 }
