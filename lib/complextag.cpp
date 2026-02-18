@@ -90,7 +90,7 @@ void ComplexTag::compact()
         tag->compact();
 
         if (tag->isBlank()) {
-            subtags.erase(it);
+            it = subtags.erase(it);
             delete tag;
             tag = nullptr;
         }

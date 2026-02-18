@@ -60,7 +60,7 @@ bool Tag::hasSubtag(const std::string name) const
 void Tag::compact()
 {
     for (auto it = attributes.begin(); it != attributes.end();) {
-        if (it->second.empty()) {
+        if ((*it).second.empty()) {
             it = attributes.erase(it);
         }
         else {
