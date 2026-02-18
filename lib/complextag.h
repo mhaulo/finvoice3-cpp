@@ -2,6 +2,7 @@
 #define COMPLEXTAG_H
 
 #include "tag.h"
+#include "util.h"
 
 class ComplexTag : public Tag
 {
@@ -12,7 +13,7 @@ public:
 
     void addSubtag(Tag* tag) override;
     Tag* findSubtag(const std::string name, bool recursive = false) const override;
-    std::multiset<Tag*> getSubtags() override;
+    std::multiset<Tag*, TagComparator> getSubtags() override;
 
     void setValue(std::string value) override;
 
@@ -22,7 +23,7 @@ public:
     void build(xmlpp::Element *element) override;
 
 protected:
-    std::multiset<Tag*> subtags;
+    std::multiset<Tag*, TagComparator> subtags;
 };
 
 #endif // COMPLEXTAG_H

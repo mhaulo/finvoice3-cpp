@@ -222,6 +222,7 @@ HEADERS += \
     subrowprogressivediscountdetails.h \
     tag.h \
     transactiondetails.h \
+    util.h \
     vatcategorycode.h \
     vatpoint.h \
     vatspecificationdetails.h

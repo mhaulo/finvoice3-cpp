@@ -1,4 +1,5 @@
 #include "simpletag.h"
+#include "util.h"
 
 SimpleTag::SimpleTag() : Tag()
 {
@@ -58,9 +59,9 @@ void SimpleTag::build(xmlpp::Element *element)
     element->add_child_text(value);
 }
 
-std::multiset<Tag*> SimpleTag::getSubtags()
+std::multiset<Tag*, TagComparator> SimpleTag::getSubtags()
 {
-    return std::multiset<Tag*>();
+    return std::multiset<Tag*, TagComparator>();
 }
 
 void SimpleTag::addSubtag(Tag* tag)

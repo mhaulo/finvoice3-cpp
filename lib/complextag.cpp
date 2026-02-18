@@ -1,4 +1,5 @@
 #include "complextag.h"
+#include "util.h"
 #include <algorithm>
 
 ComplexTag::ComplexTag() : Tag()
@@ -114,7 +115,7 @@ void ComplexTag::setValue(std::string value)
     // Do nothing
 }
 
-std::multiset<Tag*> ComplexTag::getSubtags()
+std::multiset<Tag*, TagComparator> ComplexTag::getSubtags()
 {
     return subtags;
 }

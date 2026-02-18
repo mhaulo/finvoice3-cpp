@@ -87,7 +87,7 @@ Finvoice::Finvoice() : ComplexTag("Finvoice", 0)
     addSubtag(new AttachmentMessageDetails);
 }
 
-std::multiset<Tag*> Finvoice::getSubtags() const
+std::multiset<Tag*, TagComparator> Finvoice::getSubtags() const
 {
     return subtags;
 }
