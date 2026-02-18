@@ -3,8 +3,8 @@
 #include "simpletag.h"
 #include "subrowdefinitionheadertext.h"
 
-SubRowDefinitionDetails::SubRowDefinitionDetails() : ComplexTag("SubRowDefinitionDetails")
+SubRowDefinitionDetails::SubRowDefinitionDetails() : ComplexTag("SubRowDefinitionDetails", 13)
 {
-    addSubtag(new SimpleTag("SubRowDefinitionValue"));
     addSubtag(new SubRowDefinitionHeaderText);
+    addSubtag(new SimpleTag("SubRowDefinitionValue", 1));
 }

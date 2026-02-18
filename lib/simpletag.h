@@ -9,7 +9,7 @@ class SimpleTag : public Tag
 {
 public:
     SimpleTag();
-    SimpleTag(std::string name);
+    SimpleTag(std::string name, short weight);
 
     std::string getValue() const;
     virtual bool isBlank() const override;

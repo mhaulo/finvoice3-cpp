@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-InvoiceRecipientCommunicationDetails::InvoiceRecipientCommunicationDetails() : ComplexTag("InvoiceRecipientCommunicationDetails")
+InvoiceRecipientCommunicationDetails::InvoiceRecipientCommunicationDetails() : ComplexTag("InvoiceRecipientCommunicationDetails", 17)
 {
-    addSubtag(new SimpleTag("InvoiceRecipientPhoneNumberIdentifier"));
-    addSubtag(new SimpleTag("InvoiceRecipientEmailaddressIdentifier"));
+    addSubtag(new SimpleTag("InvoiceRecipientPhoneNumberIdentifier", 0));
+    addSubtag(new SimpleTag("InvoiceRecipientEmailaddressIdentifier", 1));
 }

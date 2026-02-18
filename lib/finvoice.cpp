@@ -24,7 +24,7 @@
 #include "epidetails.h"
 #include "attachmentmessagedetails.h"
 
-Finvoice::Finvoice() : ComplexTag("Finvoice")
+Finvoice::Finvoice() : ComplexTag("Finvoice", 0)
 {
     setAttribute("Version", "3.0");
     setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
@@ -32,14 +32,35 @@ Finvoice::Finvoice() : ComplexTag("Finvoice")
 
     addSubtag(new MessageTransmissionDetails);
     addSubtag(new SellerPartyDetails);
-    addSubtag(new SellerInformationDetails);
+    addSubtag(new SimpleTag("SellerOrganisationNumber", 2));
+    addSubtag(new SimpleTag("SellerSiteCode", 3));
+    addSubtag(new SimpleTag("SellerContactPersonName", 4));
+    addSubtag(new SimpleTag("SellerContactPersonFunction", 5));
+    addSubtag(new SimpleTag("SellerContactPersonDepartment", 6));
     addSubtag(new SellerCommunicationDetails);
+    addSubtag(new SellerInformationDetails);
     addSubtag(new InvoiceSenderPartyDetails);
     addSubtag(new InvoiceRecipientPartyDetails);
+    addSubtag(new SimpleTag("InvoiceRecipientOrganisationUnitNumber", 11));
+    addSubtag(new SimpleTag("InvoiceRecipientSiteCode", 12));
+    addSubtag(new SimpleTag("InvoiceRecipientContactPersonName", 13));
+    addSubtag(new SimpleTag("InvoiceRecipientContactPersonFunction", 14));
+    addSubtag(new SimpleTag("InvoiceRecipientContactPersonDepartment", 15));
+    addSubtag(new SimpleTag("InvoiceRecipientLanguageCode", 16));
     addSubtag(new InvoiceRecipientCommunicationDetails);
     addSubtag(new BuyerPartyDetails);
+    addSubtag(new SimpleTag("BuyerOrganisationUnitNumber", 19));
+    addSubtag(new SimpleTag("BuyerSiteCode", 20));
+    addSubtag(new SimpleTag("BuyerContactPersonName", 21));
+    addSubtag(new SimpleTag("BuyerContactPersonFunction", 22));
+    addSubtag(new SimpleTag("BuyerContactPersonDepartment", 23));
     addSubtag(new BuyerCommunicationDetails);
     addSubtag(new DeliveryPartyDetails);
+    addSubtag(new SimpleTag("DeliveryOrganisationUnitNumber", 26));
+    addSubtag(new SimpleTag("DeliverySiteCode", 27));
+    addSubtag(new SimpleTag("DeliveryContactPersonName", 28));
+    addSubtag(new SimpleTag("DeliveryContactPersonFunction", 29));
+    addSubtag(new SimpleTag("DeliveryContactPersonDepartment", 30));
     addSubtag(new DeliveryCommunicationDetails);
     addSubtag(new DeliveryDetails);
     addSubtag(new AnyPartyDetails);
@@ -49,42 +70,21 @@ Finvoice::Finvoice() : ComplexTag("Finvoice")
     addSubtag(new PaymentStatusDetails);
     addSubtag(new PartialPaymentDetails);
     addSubtag(new FactoringAgreementDetails);
+    addSubtag(new SimpleTag("VirtualBankBarcode", 40));
+    // TODO invoice rows
     addSubtag(new SpecificationDetails);
     addSubtag(new EpiDetails);
+    addSubtag(new SimpleTag("InvoiceUrlNameText", 102));
+    addSubtag(new SimpleTag("InvoiceUrlText", 103));
+    addSubtag(new SimpleTag("StorageUrlText", 104));
+    addSubtag(new SimpleTag("LayOutIdentifier", 105));
+    addSubtag(new SimpleTag("InvoiceSegmentIdentifier", 106));
+    addSubtag(new SimpleTag("ControlChecksum", 107));
+    addSubtag(new SimpleTag("MessageChecksum", 108));
+    addSubtag(new SimpleTag("ControlStampText", 109));
+    addSubtag(new SimpleTag("AcceptanceStampText", 110));
+    addSubtag(new SimpleTag("OriginalInvoiceFormat", 111));
     addSubtag(new AttachmentMessageDetails);
-    addSubtag(new SimpleTag("SellerOrganisationNumber"));
-    addSubtag(new SimpleTag("SellerSiteCode"));
-    addSubtag(new SimpleTag("SellerContactPersonName"));
-    addSubtag(new SimpleTag("SellerContactPersonFunction"));
-    addSubtag(new SimpleTag("SellerContactPersonDepartment"));
-    addSubtag(new SimpleTag("InvoiceRecipientOrganisationUnitNumber"));
-    addSubtag(new SimpleTag("InvoiceRecipientSiteCode"));
-    addSubtag(new SimpleTag("InvoiceRecipientContactPersonName"));
-    addSubtag(new SimpleTag("InvoiceRecipientContactPersonDepartment"));
-    addSubtag(new SimpleTag("InvoiceRecipientLanguageCode"));
-    addSubtag(new SimpleTag("BuyerOrganisationUnitNumber"));
-    addSubtag(new SimpleTag("BuyerSiteCode"));
-    addSubtag(new SimpleTag("BuyerContactPersonName"));
-    addSubtag(new SimpleTag("BuyerContactPersonFunction"));
-    addSubtag(new SimpleTag("BuyerContactPersonDepartment"));
-    addSubtag(new SimpleTag("DeliveryOrganisationUnitNumber"));
-    addSubtag(new SimpleTag("DeliverySiteCode"));
-    addSubtag(new SimpleTag("DeliveryContactPersonName"));
-    addSubtag(new SimpleTag("DeliveryContactPersonFunction"));
-    addSubtag(new SimpleTag("DeliveryContactPersonDepartment"));
-    addSubtag(new SimpleTag("VirtualBankBarcode"));
-    addSubtag(new SimpleTag("InvoiceUrlName"));
-    addSubtag(new SimpleTag("InvoiceUrlText"));
-    addSubtag(new SimpleTag("StorageUrlText"));
-    addSubtag(new SimpleTag("LayOutIdentifier"));
-    addSubtag(new SimpleTag("InvoiceSegmentIdentifier"));
-    addSubtag(new SimpleTag("ControlChecksum"));
-    addSubtag(new SimpleTag("MessageChecksum"));
-    addSubtag(new SimpleTag("ControlStampText"));
-    addSubtag(new SimpleTag("AcceptanceStampText"));
-    addSubtag(new SimpleTag("OriginalInvoiceFormat"));
-
-    // TODO invoice rows
 }
 
 std::vector<Tag*> Finvoice::getSubtags() const

@@ -6,7 +6,7 @@
 class TransactionDetails : public ComplexTag
 {
 public:
-    TransactionDetails(std::string name = "TransactionDetails");
+    TransactionDetails(std::string name, short weight);
 };
 
 #endif // TRANSACTIONDETAILS_H

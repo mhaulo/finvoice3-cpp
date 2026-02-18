@@ -1,6 +1,6 @@
 #include "externalspecificationdetails.h"
 
-ExternalSpecificationDetails::ExternalSpecificationDetails() : ComplexTag("ExternalSpecificationDetails")
+ExternalSpecificationDetails::ExternalSpecificationDetails(short weight) : ComplexTag("ExternalSpecificationDetails", weight)
 {
 
 }

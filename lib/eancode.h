@@ -6,7 +6,7 @@
 class EanCode : public SimpleTag
 {
 public:
-    EanCode(std::string schemeId = "");
+    EanCode(std::string name, short weight, std::string schemeId = "");
 };
 
 #endif // EANCODE_H

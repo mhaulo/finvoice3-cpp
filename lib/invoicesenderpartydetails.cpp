@@ -4,10 +4,10 @@
 #include "partylegalregid.h"
 #include "partyidentifier.h"
 
-InvoiceSenderPartyDetails::InvoiceSenderPartyDetails() : ComplexTag("InvoiceSenderPartyDetails")
+InvoiceSenderPartyDetails::InvoiceSenderPartyDetails() : ComplexTag("InvoiceSenderPartyDetails", 9)
 {
-    addSubtag(new SimpleTag("InvoiceSenderOrganisationName"));
-    addSubtag(new SimpleTag("InvoiceSenderOrganisationTaxCode"));
-    addSubtag(new PartyLegalRegId);
-    addSubtag(new PartyIdentifier);
+    addSubtag(new PartyLegalRegId("InvoiceSenderPartyIdentifier", 0));
+    addSubtag(new SimpleTag("InvoiceSenderOrganisationName", 1));
+    addSubtag(new SimpleTag("InvoiceSenderOrganisationTaxCode", 2));
+    addSubtag(new PartyIdentifier("InvoiceSenderCode", 3));
 }

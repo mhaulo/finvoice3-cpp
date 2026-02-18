@@ -3,17 +3,17 @@
 #include "simpletag.h"
 #include "buyerpostaladdressdetails.h"
 
-BuyerPartyDetails::BuyerPartyDetails() : ComplexTag("BuyerPartyDetails")
+BuyerPartyDetails::BuyerPartyDetails() : ComplexTag("BuyerPartyDetails", 18)
 {
-    addSubtag(new SimpleTag("BuyerPartyIdentifier"));
-    addSubtag(new SimpleTag("BuyerPartyIdentifierUrlText"));
-    addSubtag(new SimpleTag("BuyerOrganisationTradingName"));
-    addSubtag(new SimpleTag("BuyerOrganisationDepartment"));
-    addSubtag(new SimpleTag("BuyerOrganisationTaxCode"));
-    addSubtag(new SimpleTag("BuyerOrganisationTaxCodeUrlText"));
-    addSubtag(new SimpleTag("BuyerCode"));
-    addSubtag(new BuyerPostalAddressDetails);
-    addSubtag(new SimpleTag("BuyerOrganisationName"));
-
+    addSubtag(new SimpleTag("BuyerPartyIdentifier", 0));
+    addSubtag(new SimpleTag("BuyerOrganisationName", 1));
     // TODO more BuyerOrganisationNames
+    addSubtag(new SimpleTag("BuyerOrganisationTradingName", 2));
+    addSubtag(new SimpleTag("BuyerOrganisationDepartment", 3));
+    addSubtag(new SimpleTag("BuyerOrganisationTaxCode", 4));
+    addSubtag(new SimpleTag("BuyerCode", 5));
+    addSubtag(new BuyerPostalAddressDetails);
+
+    //addSubtag(new SimpleTag("BuyerPartyIdentifierUrlText"));
+    //addSubtag(new SimpleTag("BuyerOrganisationTaxCodeUrlText"));
 }

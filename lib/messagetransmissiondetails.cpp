@@ -4,7 +4,7 @@
 #include "messagereceiverdetails.h"
 #include "messagedetails.h"
 
-MessageTransmissionDetails::MessageTransmissionDetails() : ComplexTag("MessageTransmissionDetails")
+MessageTransmissionDetails::MessageTransmissionDetails() : ComplexTag("MessageTransmissionDetails", 0)
 {
     addSubtag(new MessageSenderDetails);
     addSubtag(new MessageReceiverDetails);

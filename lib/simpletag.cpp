@@ -5,7 +5,7 @@ SimpleTag::SimpleTag() : Tag()
 
 }
 
-SimpleTag::SimpleTag(std::string name) : Tag(name)
+SimpleTag::SimpleTag(std::string name, short weight) : Tag(name, weight)
 {
 
 }

@@ -1,11 +1,11 @@
 #include "epiamount.h"
 
-EpiAmount::EpiAmount() : SimpleTag("EpiAmount")
+EpiAmount::EpiAmount() : SimpleTag("EpiAmount", 0)
 {
 
 }
 
-EpiAmount::EpiAmount(std::string name) : SimpleTag(name)
+EpiAmount::EpiAmount(std::string name, short weight) : SimpleTag(name, weight)
 {
 
 }

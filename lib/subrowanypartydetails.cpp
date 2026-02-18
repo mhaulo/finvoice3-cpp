@@ -5,16 +5,15 @@
 #include "partyidentifier.h"
 #include "subrowanypartypostaladdressdetails.h"
 
-SubRowAnyPartyDetails::SubRowAnyPartyDetails() : ComplexTag("SubRowAnyPartyDetails")
+SubRowAnyPartyDetails::SubRowAnyPartyDetails() : ComplexTag("SubRowAnyPartyDetails", 53)
 {
-    addSubtag(new SimpleTag("SubRowAnyPartyText"));
-    addSubtag(new SimpleTag("SubRowAnyPartyIdentifier"));
-    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationName"));
-    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationDepartment"));
-    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationTaxCode"));
-    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationUnitNumber"));
-    addSubtag(new SimpleTag("SubRowAnyPartySiteCode"));
-    addSubtag(new PartyLegalRegId("SubRowAnyPartyIdentifier"));
-    addSubtag(new PartyIdentifier("SubRowAnyPartyOrganisationDepartment"));
+    addSubtag(new SimpleTag("SubRowAnyPartyText", 0));
+    addSubtag(new PartyLegalRegId("SubRowAnyPartyIdentifier", 1));
+    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationName", 2));
+    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationDepartment", 3));
+    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationTaxCode", 4));
+    addSubtag(new PartyIdentifier("SubRowAnyPartyCode", 5));
     addSubtag(new SubRowAnyPartyPostalAddressDetails);
+    addSubtag(new SimpleTag("SubRowAnyPartyOrganisationUnitNumber", 7));
+    addSubtag(new SimpleTag("SubRowAnyPartySiteCode", 8));
 }

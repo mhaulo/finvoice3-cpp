@@ -2,7 +2,7 @@
 
 #include "rowdefinitionheadertext.h"
 
-RowDefinitionDetails::RowDefinitionDetails() : ComplexTag("RowDefinitionDetails")
+RowDefinitionDetails::RowDefinitionDetails() : ComplexTag("RowDefinitionDetails", 12)
 {
-    addSubtag(new RowDefinitionHeaderText);
+    addSubtag(new RowDefinitionHeaderText("RowDefinitionHeaderText", 0));
 }

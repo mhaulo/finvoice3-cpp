@@ -1,6 +1,6 @@
 #include "epireference.h"
 
-EpiReference::EpiReference() : SimpleTag("EpiReference")
+EpiReference::EpiReference() : SimpleTag("EpiReference", 1)
 {
 
 }

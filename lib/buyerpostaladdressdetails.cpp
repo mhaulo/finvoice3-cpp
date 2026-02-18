@@ -3,13 +3,13 @@
 #include "simpletag.h"
 #include "countrycode.h"
 
-BuyerPostalAddressDetails::BuyerPostalAddressDetails() : ComplexTag("BuyerPostalAddressDetails")
+BuyerPostalAddressDetails::BuyerPostalAddressDetails() : ComplexTag("BuyerPostalAddressDetails", 6)
 {
-    addSubtag(new SimpleTag("BuyerStreetName"));
-    addSubtag(new SimpleTag("BuyerTownName"));
-    addSubtag(new SimpleTag("BuyerPostCodeIdentifier"));
-    addSubtag(new SimpleTag("BuyerCountrySubdivision"));
-    addSubtag(new SimpleTag("CountryName"));
-    addSubtag(new SimpleTag("BuyerPostOfficeBoxIdentifier"));
-    addSubtag(new CountryCode);
+    addSubtag(new SimpleTag("BuyerStreetName", 0));
+    addSubtag(new SimpleTag("BuyerTownName", 1));
+    addSubtag(new SimpleTag("BuyerPostCodeIdentifier", 2));
+    addSubtag(new SimpleTag("BuyerCountrySubdivision", 3));
+    addSubtag(new CountryCode("CountryCode", 4));
+    addSubtag(new SimpleTag("CountryName", 5));
+    addSubtag(new SimpleTag("BuyerPostOfficeBoxIdentifier", 6));
 }

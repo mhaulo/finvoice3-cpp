@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-InvoiceRecipientDetails::InvoiceRecipientDetails() : ComplexTag("InvoiceRecipientDetails")
+InvoiceRecipientDetails::InvoiceRecipientDetails() : ComplexTag("InvoiceRecipientDetails", 12)
 {
-    addSubtag(new SimpleTag("InvoiceRecipientAddress"));
-    addSubtag(new SimpleTag("InvoiceRecipientIntermediatorAddress"));
+    addSubtag(new SimpleTag("InvoiceRecipientAddress", 0));
+    addSubtag(new SimpleTag("InvoiceRecipientIntermediatorAddress", 1));
 }

@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-OriginalInvoiceReference::OriginalInvoiceReference(std::string name) : ComplexTag(name)
+OriginalInvoiceReference::OriginalInvoiceReference(std::string name, short weight) : ComplexTag(name, weight)
 {
-    addSubtag(new SimpleTag("InvoiceNumber"));
-    addSubtag(new SimpleTag("InvoiceDate"));
+    addSubtag(new SimpleTag("InvoiceNumber", 0));
+    addSubtag(new SimpleTag("InvoiceDate", 1));
 }

@@ -6,7 +6,7 @@
 class ArticleGroupIdentifier : public SimpleTag
 {
 public:
-    ArticleGroupIdentifier(std::string schemeId = "", std::string schemeVersion = "");
+    ArticleGroupIdentifier(std::string name, short weight, std::string schemeId = "", std::string schemeVersion = "");
 };
 
 #endif // ARTICLEGROUPIDENTIFIER_H

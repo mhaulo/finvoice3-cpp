@@ -7,7 +7,7 @@ class CountryCode : public SimpleTag
 {
 public:
     CountryCode();
-    CountryCode(std::string name);
+    CountryCode(std::string name, short weight);
 };
 
 #endif // COUNTRYCODE_H

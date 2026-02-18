@@ -5,8 +5,9 @@ Tag::Tag()
 
 }
 
-Tag::Tag(std::string tagName) :
-    name(tagName)
+Tag::Tag(std::string tagName, short tagWeight) :
+    name(tagName),
+    weight(tagWeight)
 {
 
 }
@@ -19,6 +20,11 @@ Tag::~Tag()
 bool Tag::operator==(const Tag &other) const
 {
     return name == other.name;
+}
+
+bool Tag::operator<(const Tag &other) const
+{
+    return weight < other.weight;
 }
 
 std::string Tag::getName() const
@@ -68,4 +74,9 @@ void Tag::build(xmlpp::Element *element)
     for (auto attribute : attributes) {
         element->set_attribute(attribute.first, attribute.second);
     }
+}
+
+void Tag::setWeight(short newWeight)
+{
+    weight = newWeight;
 }

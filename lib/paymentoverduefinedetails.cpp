@@ -2,9 +2,9 @@
 
 #include "simpletag.h"
 
-PaymentOverDueFineDetails::PaymentOverDueFineDetails() : ComplexTag("PaymentOverDueFineDetails")
+PaymentOverDueFineDetails::PaymentOverDueFineDetails() : ComplexTag("PaymentOverDueFineDetails", 10)
 {
-    addSubtag(new SimpleTag("PaymentOverDueFineFreeText"));
-    addSubtag(new SimpleTag("PaymentOverDueFinePercent"));
-    addSubtag(new SimpleTag("PaymentOverDueFixedAmount"));
+    addSubtag(new SimpleTag("PaymentOverDueFineFreeText", 0));
+    addSubtag(new SimpleTag("PaymentOverDueFinePercent", 1));
+    addSubtag(new SimpleTag("PaymentOverDueFixedAmount", 2));
 }

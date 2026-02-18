@@ -6,7 +6,7 @@ ComplexTag::ComplexTag() : Tag()
 
 }
 
-ComplexTag::ComplexTag(std::string name) : Tag(name)
+ComplexTag::ComplexTag(std::string name, short weight) : Tag(name, weight)
 {
 
 }

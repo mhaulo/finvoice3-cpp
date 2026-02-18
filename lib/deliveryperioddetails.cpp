@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-DeliveryPeriodDetails::DeliveryPeriodDetails() : ComplexTag("DeliveryPeriodDetails")
+DeliveryPeriodDetails::DeliveryPeriodDetails() : ComplexTag("DeliveryPeriodDetails", 1)
 {
-    addSubtag(new SimpleTag("StartDate"));
-    addSubtag(new SimpleTag("EndDate"));
+    addSubtag(new SimpleTag("StartDate", 0));
+    addSubtag(new SimpleTag("EndDate", 1));
 }

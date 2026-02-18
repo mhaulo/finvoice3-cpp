@@ -7,6 +7,7 @@ class VatCategoryCode : public SimpleTag
 {
 public:
     VatCategoryCode();
+    VatCategoryCode(short weight);
 };
 
 #endif // VATCATEGORYCODE_H

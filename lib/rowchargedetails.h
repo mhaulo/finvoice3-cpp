@@ -6,7 +6,7 @@
 class RowChargeDetails : public ComplexTag
 {
 public:
-    RowChargeDetails(std::string name = "RowChargeDetails");
+    RowChargeDetails(std::string name, short weight);
 };
 
 #endif // ROWCHARGEDETAILS_H

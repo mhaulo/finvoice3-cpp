@@ -1,6 +1,6 @@
 #include "attachmentmessageidentifier.h"
 
-AttachmentMessageIdentifier::AttachmentMessageIdentifier() : SimpleTag("AttachmentMessageIdentifier")
+AttachmentMessageIdentifier::AttachmentMessageIdentifier() : SimpleTag("AttachmentMessageIdentifier", 0)
 {
 
 }

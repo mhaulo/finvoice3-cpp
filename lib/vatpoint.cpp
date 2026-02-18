@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-VatPoint::VatPoint() : ComplexTag("VatPoint")
+VatPoint::VatPoint() : ComplexTag("VatPoint", 60)
 {
-    addSubtag(new SimpleTag("VatPointDate"));
-    addSubtag(new SimpleTag("VatPointDateCode"));
+    addSubtag(new SimpleTag("VatPointDate", 0));
+    addSubtag(new SimpleTag("VatPointDateCode", 1));
 }

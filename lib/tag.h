@@ -9,10 +9,11 @@ class Tag
 {
 public:
     Tag();
-    Tag(std::string name);
+    Tag(std::string name, short weight = 0);
     virtual ~Tag();
 
     bool operator==(const Tag &other) const;
+    bool operator<(const Tag &other) const;
 
     std::string getName() const;
     std::map<std::string, std::string> getAttributes() const;
@@ -20,6 +21,7 @@ public:
 
     void setAttribute(std::string key, std::string value);
     virtual void setValue(std::string value) = 0;
+    void setWeight(short weight);
 
     void removeAttribute(std::string key);
 
@@ -36,6 +38,7 @@ public:
 
 protected:
     std::string name;
+    short weight;
     std::map<std::string, std::string> attributes;
 };
 

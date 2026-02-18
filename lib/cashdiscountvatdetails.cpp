@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-CashDiscountVatDetails::CashDiscountVatDetails() : ComplexTag("CashDiscountVatDetails")
+CashDiscountVatDetails::CashDiscountVatDetails() : ComplexTag("CashDiscountVatDetails", 8)
 {
-    addSubtag(new SimpleTag("CashDiscountVatPercent"));
-    addSubtag(new SimpleTag("CashDiscountVatAmount"));
+    addSubtag(new SimpleTag("CashDiscountVatPercent", 0));
+    addSubtag(new SimpleTag("CashDiscountVatAmount", 1));
 }

@@ -4,7 +4,7 @@
 #include "epipartydetails.h"
 #include "epipaymentinstructiondetails.h"
 
-EpiDetails::EpiDetails() : ComplexTag("EpiDetails")
+EpiDetails::EpiDetails() : ComplexTag("EpiDetails", 101)
 {
     addSubtag(new EpiIdentificationDetails);
     addSubtag(new EpiPartyDetails);

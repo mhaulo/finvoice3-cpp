@@ -5,17 +5,17 @@
 #include "cashdiscountvatdetails.h"
 #include "paymentoverduefinedetails.h"
 
-PaymentTermsDetails::PaymentTermsDetails() : ComplexTag("PaymentTermsDetails")
+PaymentTermsDetails::PaymentTermsDetails() : ComplexTag("PaymentTermsDetails", 64)
 {
-    addSubtag(new HeaderValue); // free text
+    addSubtag(new SimpleTag("PaymentTermsFreeText", 0));
+    addSubtag(new HeaderValue("FreeText", 1));
+    addSubtag(new SimpleTag("InvoiceDueDate", 2));
+    addSubtag(new SimpleTag("CashDiscountDate", 3));
+    addSubtag(new SimpleTag("CashDiscountBaseAmount", 4));
+    addSubtag(new SimpleTag("CashDiscountPercent", 5));
+    addSubtag(new SimpleTag("CashDiscountAmount", 6));
+    addSubtag(new SimpleTag("CashDiscountExcludingVatAmount", 7));
     addSubtag(new CashDiscountVatDetails);
+    addSubtag(new SimpleTag("ReducedInvoiceVatIncludedAmount", 9));
     addSubtag(new PaymentOverDueFineDetails);
-    addSubtag(new SimpleTag("PaymentTermsFreeText"));
-    addSubtag(new SimpleTag("InvoiceDueDate"));
-    addSubtag(new SimpleTag("CashDiscountDate"));
-    addSubtag(new SimpleTag("CashDiscountBaseAmount"));
-    addSubtag(new SimpleTag("CashDiscountPercent"));
-    addSubtag(new SimpleTag("CashDiscountAmount"));
-    addSubtag(new SimpleTag("CashDiscountExcludingVatAmount"));
-    addSubtag(new SimpleTag("ReducedInvoiceVatIncludedAmount"));
 }

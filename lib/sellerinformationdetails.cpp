@@ -5,20 +5,20 @@
 #include "invoicerecipientdetails.h"
 #include "selleraccountdetails.h"
 
-SellerInformationDetails::SellerInformationDetails() : ComplexTag("SellerInformationDetails")
+SellerInformationDetails::SellerInformationDetails() : ComplexTag("SellerInformationDetails", 8)
 {
-    addSubtag(new SimpleTag("SellerHomeTownName"));
-    addSubtag(new SimpleTag("SellerVatRegistrationText"));
-    addSubtag(new SimpleTag("SellerVatRegistrationDate"));
-    addSubtag(new SimpleTag("SellerTaxRegistrationText"));
-    addSubtag(new SimpleTag("SellerAdditionalLegalInfo"));
-    addSubtag(new SimpleTag("SellerPhoneNumber"));
-    addSubtag(new SimpleTag("SellerFaxNumber"));
-    addSubtag(new SimpleTag("SellerCommonEmailaddressIdentifier"));
-    addSubtag(new SimpleTag("SellerWebaddressIdentifier"));
-    addSubtag(new SimpleTag("SellerFreeText"));
     addSubtag(new SellerOfficialPostalAddressDetails);
-    addSubtag(new InvoiceRecipientDetails);
+    addSubtag(new SimpleTag("SellerHomeTownName", 1));
+    addSubtag(new SimpleTag("SellerVatRegistrationText", 2));
+    addSubtag(new SimpleTag("SellerVatRegistrationDate", 3));
+    addSubtag(new SimpleTag("SellerTaxRegistrationText", 4));
+    addSubtag(new SimpleTag("SellerAdditionalLegalInfo", 5));
+    addSubtag(new SimpleTag("SellerPhoneNumber", 6));
+    addSubtag(new SimpleTag("SellerFaxNumber", 7));
+    addSubtag(new SimpleTag("SellerCommonEmailaddressIdentifier", 8));
+    addSubtag(new SimpleTag("SellerWebaddressIdentifier", 9));
+    addSubtag(new SimpleTag("SellerFreeText", 10));
     addSubtag(new SellerAccountDetails);
     // TODO more SellerAccountDetails
+    addSubtag(new InvoiceRecipientDetails);
 }

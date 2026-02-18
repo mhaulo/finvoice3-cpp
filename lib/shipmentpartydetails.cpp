@@ -5,13 +5,12 @@
 #include "partyidentifier.h"
 #include "shipmentpostaladdressdetails.h"
 
-ShipmentPartyDetails::ShipmentPartyDetails() : ComplexTag("ShipmentPartyDetails")
+ShipmentPartyDetails::ShipmentPartyDetails() : ComplexTag("ShipmentPartyDetails", 2)
 {
-    addSubtag(new SimpleTag("ShipmentPartyIdentifier"));
-    addSubtag(new SimpleTag("ShipmentOrganisationName"));
-    addSubtag(new SimpleTag("ShipmentOrganisationDepartment"));
-    addSubtag(new SimpleTag("ShipmentOrganisationTaxCode"));
-    addSubtag(new PartyLegalRegId);
-    addSubtag(new PartyIdentifier);
+    addSubtag(new PartyLegalRegId("ShipmentPartyIdentifier", 0));
+    addSubtag(new SimpleTag("ShipmentOrganisationName", 1));
+    addSubtag(new SimpleTag("ShipmentOrganisationDepartment", 2));
+    addSubtag(new SimpleTag("ShipmentOrganisationTaxCode", 3));
+    addSubtag(new PartyIdentifier("ShipmentCode", 4));
     addSubtag(new ShipmentPostalAddressDetails);
 }

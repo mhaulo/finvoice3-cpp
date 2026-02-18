@@ -7,7 +7,7 @@ class ComplexTag : public Tag
 {
 public:
     ComplexTag();
-    ComplexTag(std::string name);
+    ComplexTag(std::string name, short weight);
     virtual ~ComplexTag();
 
     void addSubtag(Tag* tag) override;

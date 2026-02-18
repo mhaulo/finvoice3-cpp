@@ -6,7 +6,7 @@
 class ExternalSpecificationDetails : public ComplexTag
 {
 public:
-    ExternalSpecificationDetails();
+    ExternalSpecificationDetails(short weight);
 };
 
 #endif // EXTERNALSPECIFICATIONDETAILS_H

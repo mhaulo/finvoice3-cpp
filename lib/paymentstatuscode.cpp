@@ -2,7 +2,7 @@
 
 // enum PAID NOTPAID PARTLYPAID
 
-PaymentStatusCode::PaymentStatusCode() : SimpleTag("PaymentStatusCode")
+PaymentStatusCode::PaymentStatusCode() : SimpleTag("PaymentStatusCode", 0)
 {
 
 }

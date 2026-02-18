@@ -2,13 +2,13 @@
 
 #include "simpletag.h"
 
-RowPackageDetails::RowPackageDetails() : ComplexTag("RowPackageDetails")
+RowPackageDetails::RowPackageDetails() : ComplexTag("RowPackageDetails", 28)
 {
-    addSubtag(new SimpleTag("RowPackageLength"));
-    addSubtag(new SimpleTag("RowPackageWidth"));
-    addSubtag(new SimpleTag("RowPackageHeight"));
-    addSubtag(new SimpleTag("RowPackageWeight"));
-    addSubtag(new SimpleTag("RowPackageNetWeight"));
-    addSubtag(new SimpleTag("RowPackageVolume"));
-    addSubtag(new SimpleTag("RowTransportCarriageQuantity"));
+    addSubtag(new SimpleTag("RowPackageLength", 0));
+    addSubtag(new SimpleTag("RowPackageWidth", 1));
+    addSubtag(new SimpleTag("RowPackageHeight", 2));
+    addSubtag(new SimpleTag("RowPackageWeight", 3));
+    addSubtag(new SimpleTag("RowPackageNetWeight", 4));
+    addSubtag(new SimpleTag("RowPackageVolume", 5));
+    addSubtag(new SimpleTag("RowTransportCarriageQuantity", 6));
 }

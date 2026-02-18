@@ -2,8 +2,8 @@
 
 #include "simpletag.h"
 
-InvoiceClassification::InvoiceClassification() : ComplexTag("InvoiceClassification")
+InvoiceClassification::InvoiceClassification() : ComplexTag("InvoiceClassification", 3)
 {
-    addSubtag(new SimpleTag("ClassificationCode"));
-    addSubtag(new SimpleTag("ClassificationText"));
+    addSubtag(new SimpleTag("ClassificationCode", 0));
+    addSubtag(new SimpleTag("ClassificationText", 1));
 }

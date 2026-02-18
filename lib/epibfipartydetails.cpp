@@ -3,8 +3,8 @@
 #include "simpletag.h"
 #include "epibfiidentifier.h"
 
-EpiBfiPartyDetails::EpiBfiPartyDetails() : ComplexTag("EpiBfiPartyDetails")
+EpiBfiPartyDetails::EpiBfiPartyDetails() : ComplexTag("EpiBfiPartyDetails", 0)
 {
-    addSubtag(new SimpleTag("EpiBfiName"));
     addSubtag(new EpiBfiIdentifier);
+    addSubtag(new SimpleTag("EpiBfiName", 1));
 }
