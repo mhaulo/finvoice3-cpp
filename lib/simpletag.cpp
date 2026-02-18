@@ -58,9 +58,9 @@ void SimpleTag::build(xmlpp::Element *element)
     element->add_child_text(value);
 }
 
-std::vector<Tag*> SimpleTag::getSubtags()
+std::multiset<Tag*> SimpleTag::getSubtags()
 {
-    return std::vector<Tag*>();
+    return std::multiset<Tag*>();
 }
 
 void SimpleTag::addSubtag(Tag* tag)

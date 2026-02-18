@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <set>
 #include <libxml++/libxml++.h>
 
 class Tag
@@ -30,7 +31,7 @@ public:
 
     virtual Tag* findSubtag(const std::string name, bool recursive = false) const = 0;
     virtual bool hasSubtag(const std::string name) const;
-    virtual std::vector<Tag*> getSubtags() = 0;
+    virtual std::multiset<Tag*> getSubtags() = 0;
     virtual void addSubtag(Tag* tag) = 0;
 
     virtual void compact();

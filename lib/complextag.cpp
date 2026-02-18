@@ -22,7 +22,7 @@ ComplexTag::~ComplexTag()
 
 void ComplexTag::addSubtag(Tag* tag)
 {
-    subtags.push_back(tag);
+    subtags.insert(tag);
 }
 
 bool ComplexTag::isBlank() const
@@ -114,7 +114,7 @@ void ComplexTag::setValue(std::string value)
     // Do nothing
 }
 
-std::vector<Tag*> ComplexTag::getSubtags()
+std::multiset<Tag*> ComplexTag::getSubtags()
 {
     return subtags;
 }

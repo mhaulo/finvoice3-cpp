@@ -8,7 +8,7 @@ class Finvoice : public ComplexTag
 public:
     Finvoice();
 
-    std::vector<Tag*> getSubtags() const;
+    std::multiset<Tag*> getSubtags() const;
 };
 
 #endif // FINVOICE_H

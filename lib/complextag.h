@@ -12,7 +12,7 @@ public:
 
     void addSubtag(Tag* tag) override;
     Tag* findSubtag(const std::string name, bool recursive = false) const override;
-    std::vector<Tag*> getSubtags() override;
+    std::multiset<Tag*> getSubtags() override;
 
     void setValue(std::string value) override;
 
@@ -22,7 +22,7 @@ public:
     void build(xmlpp::Element *element) override;
 
 protected:
-    std::vector<Tag*> subtags;
+    std::multiset<Tag*> subtags;
 };
 
 #endif // COMPLEXTAG_H
