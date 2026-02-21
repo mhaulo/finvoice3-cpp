@@ -1,4 +1,5 @@
 #include "finvoice3.h"
+#include <iostream>
 
 Finvoice3::Finvoice3() :
     document(new xmlpp::Document),
@@ -19,6 +20,7 @@ void Finvoice3::compact()
 
 void Finvoice3::build()
 {
+    compact();
     xmlpp::Element *root = document->create_root_node("Finvoice");
 
     for (auto attribute : finvoice->getAttributes()) {
@@ -44,4 +46,22 @@ std::string Finvoice3::toString() const
 Finvoice* Finvoice3::root()
 {
     return finvoice;
+}
+
+bool Finvoice3::validate(const std::string schemaFilePath) const
+{
+    bool success = false;
+
+    try {
+        xmlpp::DomParser parser;
+        parser.parse_memory(toString());
+        xmlpp::SchemaValidator validator(schemaFilePath);
+        validator.validate(parser.get_document());
+        success = true;
+    }
+    catch(const xmlpp::exception& exception) {
+        std::cout << exception.what() << std::endl;
+    }
+
+    return success;
 }
