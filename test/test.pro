@@ -23,3 +23,6 @@ DEPENDPATH += $$PWD/../lib
 
 unix: CONFIG += link_pkgconfig
 unix: PKGCONFIG += libxml++-2.6
+
+DISTFILES += \
+    Finvoice3.0.xsd
