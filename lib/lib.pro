@@ -225,7 +225,8 @@ HEADERS += \
     util.h \
     vatcategorycode.h \
     vatpoint.h \
-    vatspecificationdetails.h
+    vatspecificationdetails.h \
+    version.h
 
 # Default rules for deployment.
 unix {

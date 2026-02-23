@@ -237,3 +237,18 @@ TEST_CASE("Construct Finnish B2B invoice", "[integration]")
     parser.set_throw_messages(true);
     parser.parse_memory(output);
 }
+
+TEST_CASE("Reading version info", "[unit]")
+{
+    std::string version = Finvoice3::version();
+    REQUIRE(version == "0.1.0");
+
+    unsigned major = Finvoice3::versionMajor();
+    REQUIRE(major == 0);
+
+    unsigned minor = Finvoice3::versionMinor();
+    REQUIRE(minor == 1);
+
+    unsigned revision = Finvoice3::versionRevision();
+    REQUIRE(revision == 0);
+}

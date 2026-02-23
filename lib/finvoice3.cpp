@@ -32,6 +32,35 @@ Finvoice3::~Finvoice3()
     delete document;
 }
 
+std::string Finvoice3::version()
+{
+    char buffer[8];
+    int n = snprintf(buffer, 8, "%u.%u.%u", VERSION_MAJOR, VERSION_MINOR, VERSION_REVISION);
+
+    std::string formattedOutput = "";
+
+    if (n > 0 && n < 8) {
+        formattedOutput = std::string(buffer);
+    }
+
+    return formattedOutput;
+}
+
+unsigned Finvoice3::versionMajor()
+{
+    return VERSION_MAJOR;
+}
+
+unsigned Finvoice3::versionMinor()
+{
+    return VERSION_MINOR;
+}
+
+unsigned Finvoice3::versionRevision()
+{
+    return VERSION_REVISION;
+}
+
 void Finvoice3::compact()
 {
     finvoice->compact();

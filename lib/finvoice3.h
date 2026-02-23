@@ -24,12 +24,18 @@
 #include <libxml++/libxml++.h>
 
 #include "finvoice.h"
+#include "version.h"
 
 class FINVOICE3_EXPORT Finvoice3
 {
 public:
     Finvoice3();
     ~Finvoice3();
+
+    static std::string version();
+    static unsigned versionMajor();
+    static unsigned versionMinor();
+    static unsigned versionRevision();
 
     void build();
     void compact();
