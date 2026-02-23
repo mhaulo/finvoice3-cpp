@@ -35,6 +35,45 @@ finvoice3-cpp/
 └── finvoice3-cpp.pro # subdirs project file
 
 
+## How to use this library
+
+```
+// Include the main header file
+#include "finvoice3.h"
+
+// Check which version of the library you are using.
+std::string version = Finvoice3::version();
+
+// Get the root element.
+Finvoice3 finvoice;
+Tag *root = finvoice.root();
+
+// Use findSubtag to fetch a pointer to the element you want to modify.
+// When the second argument is true, search will be done recursively through
+// child elements.
+Tag *messageSenderDetails = root->findSubtag("FromIdentifier", true);
+
+// Write value to the element.
+fromIdentifier->setValue("00371234567890");
+
+// Set attribute value.
+fromIdentifier->setAttribute("SchemeID", "0037");
+
+// Add new child elements. For simplicity, populating invoice row data
+// has been omitted here.
+Tag *invoiceRow = new InvoiceRow;
+root->addSubtag(invoiceRow);
+
+// Build the invoice structure.
+finvoice.build();
+
+// Validate the structure.
+finvoice.validate();
+
+// Write the generated XML to a string.
+std::string output = finvoice.toString();
+```
+
 ## Building from source
 
 
