@@ -24,6 +24,8 @@
 #include <libxml++/libxml++.h>
 
 #include "finvoice.h"
+#include "simpletag.h"
+#include "complextag.h"
 #include "version.h"
 
 class FINVOICE3_EXPORT Finvoice3
