@@ -28,7 +28,6 @@
 #include "partyidentifier.h"
 #include "definitiondetails.h"
 #include "vatpoint.h"
-#include "vatspecificationdetails.h"
 #include "paymenttermsdetails.h"
 #include "discountdetails.h"
 #include "invoicechargedetails.h"
@@ -96,7 +95,6 @@ InvoiceDetails::InvoiceDetails() : ComplexTag("InvoiceDetails", 34)
     addSubtag(new SimpleTag("AccountDimensionText", 58));
     addSubtag(new SimpleTag("SellerAccountText", 59));
     addSubtag(new VatPoint);
-    addSubtag(new VatSpecificationDetails);
     addSubtag(new SimpleTag("InvoiceFreeText", 62));
     addSubtag(new SimpleTag("InvoiceVatFreeText", 63));
     addSubtag(new PaymentTermsDetails);
