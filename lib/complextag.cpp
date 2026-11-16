@@ -65,8 +65,8 @@ xmlpp::Element* ComplexTag::toXml(xmlpp::Element* parent) const
 {
     xmlpp::Element* element = parent->add_child(name);
 
-    for (std::pair<std::string, std::string> attribute : attributes) {
-        element->set_attribute(attribute.first, attribute.second);
+    for (const auto &[key, value] : attributes) {
+        element->set_attribute(key, value);
     }
 
     for (Tag *tag : subtags) {

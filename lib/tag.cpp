@@ -90,8 +90,8 @@ void Tag::compact()
 
 void Tag::build(xmlpp::Element *element)
 {
-    for (auto attribute : attributes) {
-        element->set_attribute(attribute.first, attribute.second);
+    for (const auto &[key, value] : attributes) {
+        element->set_attribute(key, value);
     }
 }
 

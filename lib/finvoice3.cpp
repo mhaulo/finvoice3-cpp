@@ -71,8 +71,8 @@ void Finvoice3::build()
     compact();
     xmlpp::Element *root = document->create_root_node("Finvoice");
 
-    for (auto attribute : finvoice->getAttributes()) {
-        root->set_attribute(attribute.first, attribute.second);
+    for (const auto &[key, value] : finvoice->getAttributes()) {
+        root->set_attribute(key, value);
     }
 
     for (Tag *tag : finvoice->getSubtags()) {
