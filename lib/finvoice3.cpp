@@ -18,6 +18,7 @@
  ***************************************************************************/
 
 #include "finvoice3.h"
+
 #include <iostream>
 
 Finvoice3::Finvoice3() :
@@ -96,7 +97,7 @@ Finvoice* Finvoice3::root()
     return finvoice;
 }
 
-bool Finvoice3::validate(const std::string schemaFilePath) const
+bool Finvoice3::validate(const std::string &schemaFilePath) const
 {
     bool success = false;
 

@@ -22,7 +22,7 @@
 #include "simpletag.h"
 #include "countrycode.h"
 
-CustomsInfo::CustomsInfo(std::string name, short weight) : ComplexTag(name, weight)
+CustomsInfo::CustomsInfo(const std::string &name, short weight) : ComplexTag(name, weight)
 {
     addSubtag(new SimpleTag("CNCode", 0));
     addSubtag(new SimpleTag("CNName", 1));

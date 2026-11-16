@@ -25,7 +25,7 @@
 class EpiRemittanceInfoIdentifier : public SimpleTag
 {
 public:
-    EpiRemittanceInfoIdentifier(std::string identificationSchemeName = "");
+    EpiRemittanceInfoIdentifier(const std::string &identificationSchemeName = "");
 };
 
 #endif // EPIREMITTANCEINFOIDENTIFIER_H

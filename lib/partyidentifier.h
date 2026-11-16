@@ -26,7 +26,7 @@ class PartyIdentifier : public SimpleTag
 {
 public:
     PartyIdentifier();
-    PartyIdentifier(std::string name, short weight);
+    PartyIdentifier(const std::string &name, short weight);
 };
 
 #endif // PARTYIDENTIFIER_H

@@ -19,7 +19,7 @@
 
 #include "eancode.h"
 
-EanCode::EanCode(std::string name, short weight, std::string schemeId) : SimpleTag(name, weight)
+EanCode::EanCode(const std::string &name, short weight, const std::string &schemeId) : SimpleTag(name, weight)
 {
     setAttribute("SchemeID", schemeId);
 }

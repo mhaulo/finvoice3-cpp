@@ -25,7 +25,7 @@
 class SubRowDefinitionHeaderText : public SimpleTag
 {
 public:
-    SubRowDefinitionHeaderText(std::string definitionCode = "");
+    SubRowDefinitionHeaderText(const std::string &definitionCode = "");
 };
 
 #endif // SUBROWDEFINITIONHEADERTEXT_H

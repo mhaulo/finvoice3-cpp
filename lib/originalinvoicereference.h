@@ -25,7 +25,7 @@
 class OriginalInvoiceReference : public ComplexTag
 {
 public:
-    OriginalInvoiceReference(std::string name = "OriginalInvoiceReference", short weight = 0);
+    OriginalInvoiceReference(const std::string &name = "OriginalInvoiceReference", short weight = 0);
 };
 
 #endif // ORIGINALINVOICEREFERENCE_H

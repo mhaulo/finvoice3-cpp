@@ -25,7 +25,7 @@
 class EpiCharge : public SimpleTag
 {
 public:
-    EpiCharge(std::string chargeOption = "");
+    EpiCharge(const std::string &chargeOption = "");
 };
 
 #endif // EPICHARGE_H

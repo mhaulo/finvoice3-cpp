@@ -25,7 +25,7 @@
 class RowDefinitionHeaderText : public SimpleTag
 {
 public:
-    RowDefinitionHeaderText(std::string name, short weight, std::string definitionCode = "");
+    RowDefinitionHeaderText(const std::string &name, short weight, const std::string &definitionCode = "");
 };
 
 #endif // ROWDEFINITIONHEADERTEXT_H

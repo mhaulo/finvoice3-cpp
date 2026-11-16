@@ -25,7 +25,7 @@
 class TransactionDetails : public ComplexTag
 {
 public:
-    TransactionDetails(std::string name, short weight);
+    TransactionDetails(const std::string &name, short weight);
 };
 
 #endif // TRANSACTIONDETAILS_H

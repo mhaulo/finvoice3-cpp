@@ -19,12 +19,14 @@
 
 #include "tag.h"
 
-Tag::Tag()
+Tag::Tag() :
+    name(""),
+    weight(0)
 {
 
 }
 
-Tag::Tag(std::string tagName, short tagWeight) :
+Tag::Tag(const std::string &tagName, short tagWeight) :
     name(tagName),
     weight(tagWeight)
 {
@@ -56,22 +58,22 @@ std::map<std::string, std::string> Tag::getAttributes() const
     return attributes;
 }
 
-std::string Tag::getAttribute(std::string key) const
+std::string Tag::getAttribute(const std::string &key) const
 {
     return attributes.at(key);
 }
 
-void Tag::setAttribute(std::string key, std::string value)
+void Tag::setAttribute(const std::string &key, const std::string &value)
 {
     attributes[key] = value;
 }
 
-void Tag::removeAttribute(std::string key)
+void Tag::removeAttribute(const std::string &key)
 {
     attributes.erase(key);
 }
 
-bool Tag::hasSubtag(const std::string name) const
+bool Tag::hasSubtag(const std::string &name) const
 {
     return findSubtag(name) != nullptr;
 }

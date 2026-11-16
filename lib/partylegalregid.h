@@ -26,7 +26,7 @@ class PartyLegalRegId : public SimpleTag
 {
 public:
     PartyLegalRegId();
-    PartyLegalRegId(std::string name, short weight);
+    PartyLegalRegId(const std::string &name, short weight);
 };
 
 #endif // PARTYLEGALREGID_H

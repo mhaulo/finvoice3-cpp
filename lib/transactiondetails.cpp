@@ -21,7 +21,7 @@
 
 #include "simpletag.h"
 
-TransactionDetails::TransactionDetails(std::string name, short weight) : ComplexTag(name, weight)
+TransactionDetails::TransactionDetails(const std::string &name, short weight) : ComplexTag(name, weight)
 {
     addSubtag(new SimpleTag("OtherCurrencyAmount", 0));
     addSubtag(new SimpleTag("ExchangeRate", 1));

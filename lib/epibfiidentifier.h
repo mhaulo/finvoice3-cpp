@@ -26,7 +26,7 @@ class EpiBfiIdentifier : public SimpleTag
 {
 public:
     EpiBfiIdentifier();
-    EpiBfiIdentifier(std::string identificationSchemeName);
+    EpiBfiIdentifier(const std::string &identificationSchemeName);
 };
 
 #endif // EPIBFIIDENTIFIER_H

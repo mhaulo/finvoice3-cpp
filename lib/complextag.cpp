@@ -26,7 +26,7 @@ ComplexTag::ComplexTag() : Tag()
 
 }
 
-ComplexTag::ComplexTag(std::string name, short weight) : Tag(name, weight)
+ComplexTag::ComplexTag(const std::string &name, short weight) : Tag(name, weight)
 {
 
 }
@@ -78,7 +78,7 @@ xmlpp::Element* ComplexTag::toXml(xmlpp::Element* parent) const
     return element;
 }
 
-Tag* ComplexTag::findSubtag(const std::string name, bool recursive) const
+Tag* ComplexTag::findSubtag(const std::string &name, bool recursive) const
 {
     auto it = find_if(subtags.begin(), subtags.end(), [name](Tag* tag){ return tag->getName() == name; });
     Tag *tag = nullptr;
@@ -129,7 +129,7 @@ void ComplexTag::build(xmlpp::Element *element)
     }
 }
 
-void ComplexTag::setValue(std::string value)
+void ComplexTag::setValue(const std::string &value)
 {
     // Do nothing
 }

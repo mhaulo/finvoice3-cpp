@@ -25,7 +25,7 @@
 class HeaderValue : public ComplexTag
 {
 public:
-    HeaderValue(std::string name, short weight);
+    HeaderValue(const std::string &name, short weight);
 };
 
 #endif // HEADERVALUE_H

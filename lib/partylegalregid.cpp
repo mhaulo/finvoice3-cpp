@@ -24,7 +24,7 @@ PartyLegalRegId::PartyLegalRegId() : SimpleTag("PartyLegalRegId", 0)
 
 }
 
-PartyLegalRegId::PartyLegalRegId(std::string name, short weight) : SimpleTag(name, weight)
+PartyLegalRegId::PartyLegalRegId(const std::string &name, short weight) : SimpleTag(name, weight)
 {
 
 }

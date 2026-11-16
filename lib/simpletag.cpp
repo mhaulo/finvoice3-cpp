@@ -19,13 +19,14 @@
 
 #include "simpletag.h"
 #include "util.h"
+#include <algorithm>
 
 SimpleTag::SimpleTag() : Tag()
 {
 
 }
 
-SimpleTag::SimpleTag(std::string name, short weight) : Tag(name, weight)
+SimpleTag::SimpleTag(const std::string &name, short weight) : Tag(name, weight)
 {
 
 }
@@ -37,14 +38,10 @@ std::string SimpleTag::getValue() const
 
 bool SimpleTag::isBlank() const
 {
-    bool blank = value.empty();
-
-    for (const auto &attribute : attributes) {
-        if (!attribute.second.empty()) {
-            blank = false;
-            break;
-        }
-    }
+    bool blank = value.empty() &&
+        std::none_of(attributes.begin(), attributes.end(), [](const auto &attribute) {
+            return !attribute.second.empty();
+        });
 
     return blank;
 }
@@ -53,8 +50,8 @@ xmlpp::Element* SimpleTag::toXml(xmlpp::Element* parent) const
 {
     xmlpp::Element* element = parent->add_child(name);
 
-    for (const auto &[key, value] : attributes) {
-        element->set_attribute(key, value);
+    for (const auto &[k, v] : attributes) {
+        element->set_attribute(k, v);
     }
 
     element->add_child_text(value);
@@ -62,12 +59,12 @@ xmlpp::Element* SimpleTag::toXml(xmlpp::Element* parent) const
     return element;
 }
 
-void SimpleTag::setValue(std::string newValue)
+void SimpleTag::setValue(const std::string &newValue)
 {
     value = newValue;
 }
 
-Tag* SimpleTag::findSubtag(const std::string name, bool recursive) const
+Tag* SimpleTag::findSubtag(const std::string &name, bool recursive) const
 {
     return nullptr;
 }

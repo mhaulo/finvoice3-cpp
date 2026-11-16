@@ -25,7 +25,7 @@
 class SellerAccountId : public SimpleTag
 {
 public:
-    SellerAccountId(std::string identificationSchemeName = "");
+    SellerAccountId(const std::string &identificationSchemeName = "");
 };
 
 #endif // SELLERACCOUNTID_H

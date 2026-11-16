@@ -25,7 +25,7 @@
 class InvoiceTypeCodeFi : public SimpleTag
 {
 public:
-    InvoiceTypeCodeFi(std::string codeListAgencyIdentifier = "");
+    InvoiceTypeCodeFi(const std::string &codeListAgencyIdentifier = "");
 };
 
 #endif // INVOICETYPECODEFI_H

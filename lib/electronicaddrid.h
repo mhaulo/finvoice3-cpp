@@ -25,7 +25,7 @@
 class ElectronicAddrId : public SimpleTag
 {
 public:
-    ElectronicAddrId(std::string name, short weight, std::string schemeId = "");
+    ElectronicAddrId(const std::string &name, short weight, const std::string &schemeId = "");
 };
 
 #endif // ELECTRONICADDRID_H

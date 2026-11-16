@@ -26,8 +26,8 @@ class DestinationName : public SimpleTag
 {
 public:
     DestinationName();
-    DestinationName(std::string name, short weight);
-    DestinationName(std::string name, std::string schemeId, short weight);
+    DestinationName(const std::string &name, short weight);
+    DestinationName(const std::string &name, const std::string &schemeId, short weight);
 };
 
 #endif // DESTINATIONNAME_H

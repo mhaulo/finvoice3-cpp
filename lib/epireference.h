@@ -26,7 +26,7 @@ class EpiReference : public SimpleTag
 {
 public:
     EpiReference();
-    bool isBlank() const;
+    bool isBlank() const override;
 };
 
 #endif // EPIREFERENCE_H

@@ -19,7 +19,7 @@
 
 #include "epicharge.h"
 
-EpiCharge::EpiCharge(std::string chargeOption) : SimpleTag("EpiCharge", 5)
+EpiCharge::EpiCharge(const std::string &chargeOption) : SimpleTag("EpiCharge", 5)
 {
     setAttribute("ChargeOption", chargeOption);
 }

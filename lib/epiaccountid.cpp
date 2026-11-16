@@ -24,7 +24,7 @@ EpiAccountId::EpiAccountId() : SimpleTag("EpiAccountId", 0)
 
 }
 
-EpiAccountId::EpiAccountId(std::string name, short weight) : SimpleTag(name, weight)
+EpiAccountId::EpiAccountId(const std::string &name, short weight) : SimpleTag(name, weight)
 {
 
 }

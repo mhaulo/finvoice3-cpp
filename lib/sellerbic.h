@@ -25,7 +25,7 @@
 class SellerBic : public SimpleTag
 {
 public:
-    SellerBic(std::string identificationSchemeName = "");
+    SellerBic(const std::string &identificationSchemeName = "");
 };
 
 #endif // SELLERBIC_H

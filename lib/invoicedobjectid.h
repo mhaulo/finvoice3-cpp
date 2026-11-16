@@ -25,7 +25,7 @@
 class InvoicedObjectId : public SimpleTag
 {
 public:
-    InvoicedObjectId(std::string name, short weight, std::string schemeId = "");
+    InvoicedObjectId(const std::string &name, short weight, const std::string &schemeId = "");
 };
 
 #endif // INVOICEDOBJECTID_H

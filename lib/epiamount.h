@@ -26,7 +26,7 @@ class EpiAmount : public SimpleTag
 {
 public:
     EpiAmount();
-    EpiAmount(std::string name, short weight);
+    EpiAmount(const std::string &name, short weight);
 };
 
 #endif // EPIAMOUNT_H

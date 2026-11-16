@@ -39,7 +39,7 @@ public:
 
     void build();
     void compact();
-    bool validate(const std::string schemaFilePath) const;
+    bool validate(const std::string &schemaFilePath) const;
     Finvoice* root();
     xmlpp::Document* getDocument() const;
     std::string toString() const;

@@ -19,7 +19,7 @@
 
 #include "articlegroupidentifier.h"
 
-ArticleGroupIdentifier::ArticleGroupIdentifier(std::string name, short weight, std::string schemeId, std::string schemeVersion) :
+ArticleGroupIdentifier::ArticleGroupIdentifier(const std::string &name, short weight, const std::string &schemeId, const std::string &schemeVersion) :
     SimpleTag(name, weight)
 {
     setAttribute("SchemeID", schemeId);

@@ -25,13 +25,13 @@
 #include <set>
 #include <libxml++/libxml++.h>
 
-class TagComparator;
+struct TagComparator;
 
 class Tag
 {
 public:
     Tag();
-    Tag(std::string name, short weight = 0);
+    Tag(const std::string &name, short weight = 0);
     virtual ~Tag();
 
     bool operator==(const Tag &other) const;
@@ -39,19 +39,19 @@ public:
 
     std::string getName() const;
     std::map<std::string, std::string> getAttributes() const;
-    std::string getAttribute(std::string key) const;
+    std::string getAttribute(const std::string &key) const;
 
-    void setAttribute(std::string key, std::string value);
-    virtual void setValue(std::string value) = 0;
+    void setAttribute(const std::string &key, const std::string &value);
+    virtual void setValue(const std::string &value) = 0;
     void setWeight(short weight);
 
-    void removeAttribute(std::string key);
+    void removeAttribute(const std::string &key);
 
     virtual bool isBlank() const = 0;
     virtual xmlpp::Element* toXml(xmlpp::Element* parent) const = 0;
 
-    virtual Tag* findSubtag(const std::string name, bool recursive = false) const = 0;
-    virtual bool hasSubtag(const std::string name) const;
+    virtual Tag* findSubtag(const std::string &name, bool recursive = false) const = 0;
+    virtual bool hasSubtag(const std::string &name) const;
     virtual std::multiset<Tag*, TagComparator> getSubtags() = 0;
     virtual void addSubtag(Tag* tag) = 0;
 

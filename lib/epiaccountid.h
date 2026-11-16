@@ -26,7 +26,7 @@ class EpiAccountId : public SimpleTag
 {
 public:
     EpiAccountId();
-    EpiAccountId(std::string name, short weight);
+    EpiAccountId(const std::string &name, short weight);
 };
 
 #endif // EPIACCOUNTID_H

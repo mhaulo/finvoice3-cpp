@@ -25,7 +25,7 @@
 class CustomsInfo : public ComplexTag
 {
 public:
-    CustomsInfo(std::string name, short weight);
+    CustomsInfo(const std::string &name, short weight);
 };
 
 #endif // CUSTOMSINFO_H
