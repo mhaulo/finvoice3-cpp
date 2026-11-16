@@ -247,7 +247,7 @@ TEST_CASE("Reading version info", "[unit]")
     REQUIRE(major == 0);
 
     unsigned minor = Finvoice3::versionMinor();
-    REQUIRE(minor == 1);
+    REQUIRE(minor == 2);
 
     unsigned revision = Finvoice3::versionRevision();
     REQUIRE(revision == 0);
